@@ -14,6 +14,10 @@ public class Painters {
         birthdate=b;
         deathdate=d;
     }
-
+    public String info(){
+        String info=new String();
+        info+=name+" kommer från "+location;
+        return info;
+    }
 }
 
