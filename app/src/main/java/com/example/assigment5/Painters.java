@@ -19,5 +19,9 @@ public class Painters {
         info+=name+" kommer från "+location;
         return info;
     }
+    @Override
+    public String toString(){
+        return name;
+    }
 }
 
