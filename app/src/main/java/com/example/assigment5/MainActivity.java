@@ -36,7 +36,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         adapter=new ArrayAdapter<Painters>(this,R.layout.lista_textview, R.id.lista_textview_xml,Listdata);
+        ListView lista=(ListView) findViewById(R.id.lista);
+        lista.setAdapter(adapter);
+        new JsonTask().execute();
 
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),Listdata.get(position).info(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,16 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.about){
             Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT).show();
-            ListView lista=(ListView) findViewById(R.id.lista);
-            lista.setAdapter(adapter);
-            new JsonTask().execute();
 
-            lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Toast.makeText(getApplicationContext(),Listdata.get(position).info(),Toast.LENGTH_SHORT).show();
-                }
-            });
             return true;
         }
 
