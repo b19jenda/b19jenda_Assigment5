@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.about){
-            Toast.makeText(this, "Hello!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
             return true;
