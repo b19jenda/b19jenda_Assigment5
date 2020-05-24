@@ -16,7 +16,7 @@ public class Painters {
     }
     public String info(){
         String info=new String();
-        info+=name+" kommer från "+location;
+        info+=name+" comes from "+location+" and was born "+birthdate+" and was active as a painter til year "+deathdate+","+name+" Was dedicated to the painters work his whole life and made a huge impact on the artforms we have today. ";
         return info;
     }
     @Override
